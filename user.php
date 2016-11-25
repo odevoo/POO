@@ -21,8 +21,6 @@ class user
        $this->address = $address;
        $this->postalCode = $postalCode;
        $this->city = $city;
-
-
     }
 
     public function subscribe(){
