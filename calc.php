@@ -17,7 +17,7 @@ class Calcul
         }
         return $result; 
     }
-    public function substract($val){
+    public function subtract($val){
         
         $result = 0;
         foreach ($val as $value) {
@@ -45,11 +45,15 @@ class Calcul
         return $result;
     }
     public function divide($val){
-         $result = 1;
+         $result = 0;
         foreach ($val as $value) {
             if ($value != 'divide') {
+                if ($result === 0) {
+                    $result = (int)$value;
+                } else {
                 $value = (int)$value;
-                $result = $result * $value;
+                $result = $result / $value;
+            }
             }
         }
         return $result;
@@ -81,9 +85,17 @@ switch ($operation[1]) {
         break;
 
     case 'subtract':
-        $result = $calcul->substract($operation);
+        $result = $calcul->subtract($operation);
         $stmt = json_encode($result);
-        echo 'result soustrouction: '.$stmt;
+        echo $stmt;
+        header('Content-Type: application/json');
+        return $stmt;
+        break;
+
+    case 'divide':
+        $result = $calcul->divide($operation);
+        $stmt = json_encode($result);
+        echo $stmt;
         header('Content-Type: application/json');
         return $stmt;
         break;

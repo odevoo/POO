@@ -3,7 +3,7 @@ $(document).ready(function(){
   var temp = '';
   $('.digit').on('click', function(){
     var val = $(this).val();
-    console.log(val);
+    //console.log(val);
     temp += val;
     
   });
@@ -28,6 +28,7 @@ $(document).ready(function(){
       success: function(data){
           
           var result = jQuery.parseJSON(data);
+          console.log(result);
           $('#results').append(result);
       }
     });
