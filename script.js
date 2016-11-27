@@ -28,9 +28,15 @@ $(document).ready(function(){
       success: function(data){
           
           var result = jQuery.parseJSON(data);
-          console.log(result);
-          $('#results').append(result);
+          
+          $('#results').html(result);
       }
     });
+    data = [];
+  });
+  $('#clear').on('click' , function() {
+    data = [];
+    temp = '';
+    $('#results').html('');
   });
 });
