@@ -3,6 +3,7 @@ $(document).ready(function(){
   var temp = '';
   $('.digit').on('click', function(){
     var val = $(this).val();
+    $('#results').append(val);
     //console.log(val);
     temp += val;
     
@@ -13,6 +14,7 @@ $(document).ready(function(){
     operator = $(this).val();
     data.push(operator);
     temp = '';
+    $('#results').html('');
   });
   $('#enter').on('click', function(){
     data.push(temp);

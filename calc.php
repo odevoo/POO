@@ -11,7 +11,7 @@ class Calcul
         $result = 0;
         foreach ($val as $value) {
             if ($value != 'add') {
-                $value = (int)$value;
+                $value = (float)$value;
                 $result += $value;
             }
         }
@@ -20,25 +20,28 @@ class Calcul
     public function subtract($val){
         
         $result = 0;
+        $key = 0;
         foreach ($val as $value) {
             if ($value != 'subtract') {
-                if ($result === 0) {
-                    $result = (int)$value;
+                if ($result === 0 && $key === 0) {
+                    $result = (float)$value;
+                    $key = 1;
                     //echo $result;
                     
                 } else {
-                $value = (int)$value;
+                $value = (float)$value;
                 $result -= $value; 
             }
             }
         }
+        $key = 0;
         return $result;
     }
     public function multiply($val){
          $result = 1;
         foreach ($val as $value) {
             if ($value != 'multiply') {
-                $value = (int)$value;
+                $value = (float)$value;
                 $result = $result * $value;
             }
         }
@@ -49,9 +52,9 @@ class Calcul
         foreach ($val as $value) {
             if ($value != 'divide') {
                 if ($result === 0) {
-                    $result = (int)$value;
+                    $result = (float)$value;
                 } else {
-                $value = (int)$value;
+                $value = (float)$value;
                 $result = $result / $value;
             }
             }
