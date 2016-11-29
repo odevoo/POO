@@ -29,7 +29,8 @@ $(document).ready(function(){
       data: {'data' : dataJson},
       success: function(data){
           
-          var result = jQuery.parseJSON(data);
+          //var result = jQuery.parseJSON(data);
+          var result = data;
           
           $('#results').html(result);
       }

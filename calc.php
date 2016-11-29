@@ -75,31 +75,28 @@ switch ($operation[1]) {
         $result = $calcul->add($operation);
         $stmt = json_encode($result);
         echo $stmt;
-        header('Content-Type: application/json');
-        return $stmt;
+        //header('Content-Type: application/json');
+        //return $stmt;
         break;
     
     case 'multiply':
         $result = $calcul->multiply($operation);
         $stmt = json_encode($result);
         echo $stmt;
-        header('Content-Type: application/json');
-        return $stmt;
+        
         break;
 
     case 'subtract':
         $result = $calcul->subtract($operation);
         $stmt = json_encode($result);
         echo $stmt;
-        header('Content-Type: application/json');
-        return $stmt;
+        
         break;
 
     case 'divide':
         $result = $calcul->divide($operation);
         $stmt = json_encode($result);
         echo $stmt;
-        header('Content-Type: application/json');
-        return $stmt;
+        
         break;
 }
